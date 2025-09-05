@@ -22,8 +22,6 @@ This project shows how you can:
 | **GND**     | GND                                |
 | **SDA**     | GPIO21                             |
 | **SCL**     | GPIO22                             |
-| **AD0**     | Leave (0x68) or pull high for 0x69 |
-| **INT**     | Optional (interrupt pin)           |
 
 👉 You can remap pins with `Wire.begin(SDA_pin, SCL_pin)` if you need different GPIOs.
 
