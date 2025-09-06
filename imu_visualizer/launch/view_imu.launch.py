@@ -18,7 +18,7 @@ def generate_launch_description():
         parameters=[{'window_size': 15}]
     )
 
-    # 2. IMU filter (Madgwick) → publishes imu_mount -> imu_link
+    # 2. IMU filter (Madgwick) → publishes odom -> imu_link
     imu_filter_node = Node(
         package='imu_filter_madgwick',
         executable='imu_filter_madgwick_node',
