@@ -81,6 +81,13 @@ ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0 -b 921600 -v4
 
 ---
 
+🧩 **Run URDF**
+
+```bash
+ros2 run robot_state_publisher robot_state_publisher ~/imu_ws/src/imu_visualizer/urdf/imu_cube.urdf & rviz2
+```
+---
+
 ## 🚀 Run the Full Project
 
 Open **3 terminals** (each sourced to your ROS 2 workspace).
@@ -88,6 +95,7 @@ Open **3 terminals** (each sourced to your ROS 2 workspace).
 1️⃣ **Start the micro-ROS Agent**
 
 ```bash
+ros2 run robot_state_publisher robot_state_publisher ~/imu_ws/src/imu_visualizer/urdf/imu_cube.urdf & rviz2
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0 -b 921600 -v4
 ```
 
