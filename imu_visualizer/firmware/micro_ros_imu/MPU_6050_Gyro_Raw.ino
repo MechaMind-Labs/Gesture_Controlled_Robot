@@ -33,7 +33,7 @@ void loop()
   Gy = mpu6050.getGyroY();
   Gz = mpu6050.getGyroZ();
 
-  GAx = mpu6050.getGyroAngleX
+  GAx = mpu6050.getGyroAngleX();
   GAy = mpu6050.getGyroAngleY();
   GAz = mpu6050.getGyroAngleZ();
 
