@@ -36,8 +36,6 @@ def generate_launch_description():
         executable='imu_controller', # This should match the name in your setup.py
         name='imu_controller',
         parameters=[{
-            'accel_threshold_x': 2.0,
-            'accel_threshold_z': 0.05,
             'max_linear_speed': 0.5,
             'max_angular_speed': 1.0
         }]
