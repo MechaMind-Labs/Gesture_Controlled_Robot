@@ -35,7 +35,6 @@ def generate_launch_description():
         package='imu_visualizer',
         executable='imu_controller', # This should match the name in your setup.py
         name='imu_controller',
-        # CORRECTED: Removed 'window_size' and added the correct parameters
         parameters=[{
             'accel_threshold_x': 2.0,
             'accel_threshold_z': 0.05,
