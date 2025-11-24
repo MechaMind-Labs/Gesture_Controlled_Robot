@@ -3,6 +3,13 @@
 Welcome to the **Gesture Controlled Robot** project!
 Here we bring together **ESP32 + MPU6050 IMU + micro-ROS + ROS 2** to control and visualize robot movements using hand gestures.
 
+---
+
+## 🎥 ESP32+MPU6050 Gesture Control Demo  
+https://github.com/user-attachments/assets/ebf6ab36-b1be-4994-98d0-e850d915f325
+
+---
+
 This project shows how you can:
 
 * 📡 Stream real-time IMU data from an **ESP32** running micro-ROS.
