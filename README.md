@@ -8,7 +8,7 @@ Here we bring together **ESP32 + MPU6050 IMU + micro-ROS + ROS 2** to control an
 ## 🎥 ESP32+MPU6050 Gesture Control Demo  
 https://github.com/user-attachments/assets/ebf6ab36-b1be-4994-98d0-e850d915f325
 
-https://github.com/user-attachments/assets/963eb20c-8ba4-42f7-b4b7-7e33bf81f5b2
+https://github.com/user-attachments/assets/babd231e-a6a4-4488-a23d-79a8b3535493
 
 ---
 
@@ -144,14 +144,16 @@ ros2 launch imu_visualizer view_imu.launch.py
 
 ---
 
-## 🙌 Credits
+## 📚 References
 
-* 💡 Original repo: [MechaMind-Labs/Gesture\_Controlled\_Robot](https://github.com/MechaMind-Labs/Gesture_Controlled_Robot)
-* 🧑‍💻 Maintained & documented by [Curious-Utkarsh](https://github.com/Curious-Utkarsh)
 * 🌐 [micro-ROS Tutorials](https://micro.ros.org/docs/tutorials/core/first_application_linux/)
+* 🌐 [ROS2 Humble Docs](https://docs.ros.org/en/humble/index.html)
 
 ---
 
-✨ That’s it — You’ve built your own **Gesture Controlled Robot with ESP32 + micro-ROS + ROS 2**!
+## 🙌 Credits
+
+Maintained by **[Curious-Utkarsh](https://github.com/Curious-Utkarsh)**
+✨ You’ve built your own **Gesture Controlled Robot with ESP32 + micro-ROS + ROS 2**!
 
 ---
