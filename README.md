@@ -8,6 +8,8 @@ Here we bring together **ESP32 + MPU6050 IMU + micro-ROS + ROS 2** to control an
 ## 🎥 ESP32+MPU6050 Gesture Control Demo  
 https://github.com/user-attachments/assets/ebf6ab36-b1be-4994-98d0-e850d915f325
 
+https://github.com/user-attachments/assets/963eb20c-8ba4-42f7-b4b7-7e33bf81f5b2
+
 ---
 
 This project shows how you can:
