@@ -137,7 +137,7 @@ ros2 launch imu_visualizer view_imu.launch.py
 
 ## 🙌 Credits
 
-* 💡 Original repo: [MechaMind-Labs-LLP/Gesture\_Controlled\_Robot](https://github.com/MechaMind-Labs-LLP/Gesture_Controlled_Robot)
+* 💡 Original repo: [MechaMind-Labs/Gesture\_Controlled\_Robot](https://github.com/MechaMind-Labs/Gesture_Controlled_Robot)
 * 🧑‍💻 Maintained & documented by [Curious-Utkarsh](https://github.com/Curious-Utkarsh)
 * 🌐 [micro-ROS Tutorials](https://micro.ros.org/docs/tutorials/core/first_application_linux/)
 
