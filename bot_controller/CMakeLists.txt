@@ -15,14 +15,6 @@ find_package(trajectory_msgs REQUIRED)
 find_package(twist_mux_msgs REQUIRED)
 find_package(rclcpp_action REQUIRED)
 
-include_directories(include)
-include_directories(${EIGEN3_INCLUDE_DIR})
-
-install(
-  DIRECTORY include
-  DESTINATION include
-)
-
 install(
   DIRECTORY launch config
   DESTINATION share/${PROJECT_NAME}
