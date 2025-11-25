@@ -208,7 +208,7 @@ ros2 run robot_state_publisher robot_state_publisher ~/gesture_ws/src/imu_visual
 
 ## 🚀 Run the Full Gesture Control Robot Project
 
-### **1️⃣ Flash the ESP32 Firmware (micro_ros_imu)**
+### **1️⃣ Flash the ESP32 Firmware (micro_ros_imu.ino)**
 
 1. Open **Arduino IDE**.
 2. Navigate to the firmware file:
