@@ -231,6 +231,7 @@ ros2 run robot_state_publisher robot_state_publisher ~/gesture_ws/src/imu_visual
 🧩 Add ROS Humble setup and ROS Domain ID to your `~/.bashrc`:
 
 ```bash
+cd ~
 echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
 echo "export ROS_DOMAIN_ID=1" >> ~/.bashrc
 ```
