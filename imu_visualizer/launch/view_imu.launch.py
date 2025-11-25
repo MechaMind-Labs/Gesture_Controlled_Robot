@@ -4,6 +4,15 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 
 def generate_launch_description():
+    pkg_share = get_package_share_directory('imu_visualizer')
+
+    rviz_config_path = os.path.join(
+        pkg_share,
+        'rviz',
+        'imu_config.rviz'
+    )
+
+
     urdf_path = os.path.join(
         get_package_share_directory('imu_visualizer'),
         'urdf',
@@ -49,7 +58,8 @@ def generate_launch_description():
         package='rviz2',
         executable='rviz2',
         name='rviz2',
-        output='screen'
+        output='screen',
+        arguments=['-d', rviz_config_path]
     )
 
     return LaunchDescription([
