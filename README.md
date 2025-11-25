@@ -68,29 +68,54 @@ This project shows how you can:
 
 ---
 
-## 🔌 Running the micro-ROS Agent
+## ⚙️ micro-ROS Installation (for ROS 2 Humble)
 
-On your ROS 2 host:
+### **1️⃣ Source ROS 2 Installation**
 
 ```bash
-# Create agent workspace
-ros2 run micro_ros_setup create_agent_ws.sh
-
-# Build the agent
-ros2 run micro_ros_setup build_agent.sh
-
-# Source environment
-source install/local_setup.bash
-
-# Run the agent via USB serial
-ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
+source /opt/ros/$ROS_DISTRO/setup.bash
 ```
+
+### **2️⃣ Create a Workspace & Clone micro-ROS Setup**
+
+```bash
+mkdir microros_ws
+cd microros_ws
+git clone -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
+```
+
+### **3️⃣ Install Dependencies**
+
+```bash
+sudo apt update && rosdep update
+rosdep install --from-paths src --ignore-src -y
+```
+
+### **4️⃣ Install pip (if not installed)**
+
+```bash
+sudo apt-get install python3-pip
+```
+
+### **5️⃣ Build micro-ROS Tools**
+
+```bash
+colcon build
+```
+
+### **6️⃣ Source the micro-ROS Workspace**
+
+```bash
+source install/local_setup.bash
+```
+
+---
 
 ⚠️ Replace `/dev/ttyUSB0` with your board’s serial port (check with `ls /dev/serial/by-id/*`).
 
 ---
 
-🧩 **Run URDF**
+🧩 **Run URDF to see Cylinder (imu_link)**
 
 ```bash
 ros2 run robot_state_publisher robot_state_publisher ~/gesture_ws/src/imu_visualizer/urdf/imu_cube.urdf & rviz2
@@ -99,11 +124,47 @@ ros2 run robot_state_publisher robot_state_publisher ~/gesture_ws/src/imu_visual
 
 ## 🚀 Run the Full Gesture Control Robot Project
 
+### **1️⃣ Flash the ESP32 Firmware (micro_ros_imu)**
+
+1. Open **Arduino IDE**.
+2. Navigate to the firmware file:
+
+   ```
+   imu_visualizer/firmware/micro_ros_imu/micro_ros_imu.ino
+   ```
+3. Connect your **ESP32** with the **exact wiring** shown in the project README.
+4. In Arduino IDE, select:
+
+   * **Board:** ESP32 Dev Module
+   * **Port:** Correct COM port
+5. Make sure the **baud rate is set to 115200**.
+6. Click **Upload** to flash the firmware onto the ESP32.
+
+---
+
+### **2️⃣ Configure ROS 2 Humble Environment**
+
+🧩 Add ROS Humble setup and ROS Domain ID to your `~/.bashrc`:
+
+```bash
+echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
+echo "export ROS_DOMAIN_ID=1" >> ~/.bashrc
+```
+
+Reload the updated environment:
+
+```bash
+source ~/.bashrc
+```
+
+---
+
 Open **3 terminals** (each sourced to your ROS 2 workspace).
 
 1️⃣ **Start the micro-ROS Agent (Terminal 1)**
 
 ```bash
+source ~/.bashrc
 cd ~/microros_ws
 source install/setup.bash
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
@@ -112,6 +173,7 @@ ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
 2️⃣ **Bring up the simulated robot (Terminal 2)**
 
 ```bash
+source ~/.bashrc
 cd ~/gesture_ws
 source install/setup.bash
 ros2 launch bot_bringup simulated_robot.launch.py
@@ -120,6 +182,7 @@ ros2 launch bot_bringup simulated_robot.launch.py
 3️⃣ **Run IMU controller (subscriber + logic) (terminal 3)**
 
 ```bash
+source ~/.bashrc
 cd ~/gesture_ws
 source install/setup.bash
 ros2 launch imu_visualizer imu_controller.launch.py
@@ -133,6 +196,7 @@ Open **2 terminals** (each sourced to your ROS 2 workspace).
 1️⃣ **Start the micro-ROS Agent (Terminal 1)**
 
 ```bash
+source ~/.bashrc
 cd ~/microros_ws
 source install/setup.bash
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
@@ -141,6 +205,7 @@ ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
 2️⃣ **Visualize IMU Cylinder in RViz (Terminal 2)**
 
 ```bash
+source ~/.bashrc
 cd ~/gesture_ws
 source install/setup.bash
 ros2 launch imu_visualizer view_imu.launch.py
