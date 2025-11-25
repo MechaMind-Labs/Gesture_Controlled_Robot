@@ -68,6 +68,90 @@ This project shows how you can:
 
 ---
 
+
+## 📥 Clone & Setup the Gesture Controlled Robot Workspace
+
+Follow the steps below to clone the repository, move the packages into your ROS 2 workspace, install dependencies, and build everything.
+
+---
+
+### **1️⃣ Go to Home Directory**
+
+```bash
+cd ~
+```
+
+### **2️⃣ Clone the Repository**
+
+```bash
+git clone https://github.com/MechaMind-Labs/Gesture_Controlled_Robot.git
+```
+
+---
+
+### **3️⃣ Create a ROS 2 Workspace**
+
+```bash
+mkdir -p gesture_ws/src
+```
+
+---
+
+### **4️⃣ Move All Packages Into the Workspace**
+
+```bash
+mv Gesture_Controlled_Robot/* gesture_ws/src/
+```
+
+(Optional: remove empty repo folder)
+
+```bash
+rm -rf Gesture_Controlled_Robot
+```
+
+---
+
+### **5️⃣ Navigate to the Workspace**
+
+```bash
+cd gesture_ws
+```
+
+---
+
+### **6️⃣ Install Dependencies Using rosdep**
+
+```bash
+cd ~
+sudo apt install python3-rosdep -y
+sudo rosdep init
+rosdep update
+```
+
+```bash
+cd ~/gesture_ws
+sudo apt update && rosdep update
+rosdep install --from-paths src --ignore-src -r -y
+```
+
+---
+
+### **7️⃣ Build the Workspace**
+
+```bash
+colcon build
+```
+
+---
+
+### **8️⃣ Source the Workspace**
+
+```bash
+source install/setup.bash
+```
+
+---
+
 ## ⚙️ micro-ROS Installation (for ROS 2 Humble)
 
 ### **1️⃣ Source ROS 2 Installation**
