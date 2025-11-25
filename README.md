@@ -300,9 +300,9 @@ ros2 launch imu_visualizer view_imu.launch.py
 
 ---
 
-## 🧩 Troubleshooting
+## ⚠️ Troubleshooting
 
-* **No data?** → Check wiring (SDA/SCL), baud rate, and serial port.
+* **No data?** → Check wiring (SDA/SCL), loose connections, baud rate, and serial port.
 * **Permission denied on `/dev/ttyUSB0`?** →
 
   ```bash
