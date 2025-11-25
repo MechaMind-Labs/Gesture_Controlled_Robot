@@ -83,7 +83,7 @@ ros2 run micro_ros_setup build_agent.sh
 source install/local_setup.bash
 
 # Run the agent via USB serial
-ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0 -b 921600 -v4
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
 ```
 
 ⚠️ Replace `/dev/ttyUSB0` with your board’s serial port (check with `ls /dev/serial/by-id/*`).
@@ -97,36 +97,56 @@ ros2 run robot_state_publisher robot_state_publisher ~/gesture_ws/src/imu_visual
 ```
 ---
 
-## 🚀 Run the Full Project
+## 🚀 Run the Full Gesture Control Robot Project
 
 Open **3 terminals** (each sourced to your ROS 2 workspace).
 
-1️⃣ **Start the micro-ROS Agent**
+1️⃣ **Start the micro-ROS Agent (Terminal 1)**
 
 ```bash
-ros2 run robot_state_publisher robot_state_publisher ~/gesture_ws/src/imu_visualizer/urdf/imu_cube.urdf & rviz2
-ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0 -b 921600 -v4
+cd ~/microros_ws
+source install/setup.bash
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
 ```
 
-2️⃣ **Bring up the simulated robot**
+2️⃣ **Bring up the simulated robot (Terminal 2)**
 
 ```bash
+cd ~/gesture_ws
+source install/setup.bash
 ros2 launch bot_bringup simulated_robot.launch.py
 ```
 
-3️⃣ **Run IMU controller (subscriber + logic)**
+3️⃣ **Run IMU controller (subscriber + logic) (terminal 3)**
 
 ```bash
+cd ~/gesture_ws
+source install/setup.bash
 ros2 launch imu_visualizer imu_controller.launch.py
 ```
+---
 
-4️⃣ **Visualize IMU in RViz**
+## 🚀 Run the IMU Cube Visualization
+
+Open **2 terminals** (each sourced to your ROS 2 workspace).
+
+1️⃣ **Start the micro-ROS Agent (Terminal 1)**
 
 ```bash
+cd ~/microros_ws
+source install/setup.bash
+ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
+```
+
+1️2️⃣ **Visualize IMU Cylinder in RViz (Terminal 2)**
+
+```bash
+cd ~/gesture_ws
+source install/setup.bash
 ros2 launch imu_visualizer view_imu.launch.py
 ```
 
-👉 Now you can **see your IMU orientation in RViz** and control the robot with gestures 🎉
+👉 Now you can **see your IMU orientation in RViz and also control the robot with Gestures** 🎉
 
 ---
 
