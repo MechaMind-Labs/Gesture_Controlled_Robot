@@ -244,9 +244,9 @@ source ~/.bashrc
 
 ---
 
-Open **3 terminals** (each sourced to your ROS 2 workspace).
+### Open **3 terminals** (each sourced to your ROS 2 workspace).
 
-1️⃣ **Start the micro-ROS Agent (Terminal 1)**
+1️⃣ **Start the micro-ROS Agent (Terminal 1), then press reset button on ESP32**
 
 ```bash
 source ~/.bashrc
@@ -278,7 +278,7 @@ ros2 launch imu_visualizer imu_controller.launch.py
 
 Open **2 terminals** (each sourced to your ROS 2 workspace).
 
-1️⃣ **Start the micro-ROS Agent (Terminal 1)**
+1️⃣ **Start the micro-ROS Agent (Terminal 1), then press reset button on ESP32**
 
 ```bash
 source ~/.bashrc
