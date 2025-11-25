@@ -138,7 +138,7 @@ source install/setup.bash
 ros2 run micro_ros_agent micro_ros_agent serial --dev /dev/ttyUSB0
 ```
 
-1️2️⃣ **Visualize IMU Cylinder in RViz (Terminal 2)**
+2️⃣ **Visualize IMU Cylinder in RViz (Terminal 2)**
 
 ```bash
 cd ~/gesture_ws
