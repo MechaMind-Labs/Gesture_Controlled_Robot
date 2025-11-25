@@ -310,7 +310,7 @@ ros2 launch imu_visualizer view_imu.launch.py
   ```
 
   *(Log out and back in after adding user to `dialout`.)*
-* **IMU outputs 0** → Ensure VCC = 3.3V and address (AD0 pin).
+* **IMU outputs 0** → Ensure VCC = 3.3V and check IMU address.
 
 ---
 
