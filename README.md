@@ -153,7 +153,7 @@ source install/setup.bash
 
 # 🚀 micro-ROS Setup Guide (ROS 2)
 
-This repository provides a step-by-step guide to install and build **micro-ROS** on your ROS 2 system.
+This is a step-by-step guide to install and build **micro-ROS** on your ROS 2 system.
 Follow the instructions below to set up the firmware workspace, build the micro-ROS Agent, and prepare your development environment.
 
 ---
