@@ -149,11 +149,6 @@ colcon build
 ```bash
 source install/setup.bash
 ```
-
----
-
-Here is a clean and professional **GitHub README.md** for your micro-ROS setup steps:
-
 ---
 
 # 🚀 micro-ROS Setup Guide (ROS 2)
