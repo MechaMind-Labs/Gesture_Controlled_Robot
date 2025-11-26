@@ -158,15 +158,6 @@ Follow the instructions below to set up the firmware workspace, build the micro-
 
 ---
 
-## 📦 Prerequisites
-
-* Ubuntu 20.04 / 22.04
-* ROS 2 installed (Humble, Foxy, Galactic, etc.)
-* Internet connection
-* Basic understanding of ROS 2 workspaces
-
----
-
 ## 🛠️ 1. Source ROS 2 Environment
 
 Before anything else, source your ROS 2 installation:
