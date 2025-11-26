@@ -152,15 +152,38 @@ source install/setup.bash
 
 ---
 
-## ⚙️ micro-ROS Installation (for ROS 2 Humble)
+Here is a clean and professional **GitHub README.md** for your micro-ROS setup steps:
 
-### **1️⃣ Source ROS 2 Installation**
+---
+
+# 🚀 micro-ROS Setup Guide (ROS 2)
+
+This repository provides a step-by-step guide to install and build **micro-ROS** on your ROS 2 system.
+Follow the instructions below to set up the firmware workspace, build the micro-ROS Agent, and prepare your development environment.
+
+---
+
+## 📦 Prerequisites
+
+* Ubuntu 20.04 / 22.04
+* ROS 2 installed (Humble, Foxy, Galactic, etc.)
+* Internet connection
+* Basic understanding of ROS 2 workspaces
+
+---
+
+## 🛠️ 1. Source ROS 2 Environment
+
+Before anything else, source your ROS 2 installation:
 
 ```bash
+cd ~
 source /opt/ros/$ROS_DISTRO/setup.bash
 ```
 
-### **2️⃣ Create a Workspace & Clone micro-ROS Setup**
+---
+
+## 📁 2. Create micro-ROS Workspace & Clone Tools
 
 ```bash
 mkdir microros_ws
@@ -168,31 +191,67 @@ cd microros_ws
 git clone -b $ROS_DISTRO https://github.com/micro-ROS/micro_ros_setup.git src/micro_ros_setup
 ```
 
-### **3️⃣ Install Dependencies**
+---
+
+## 📦 3. Install Dependencies
 
 ```bash
 sudo apt update && rosdep update
 rosdep install --from-paths src --ignore-src -y
 ```
 
-### **4️⃣ Install pip (if not installed)**
+Install pip (if not already installed):
 
 ```bash
 sudo apt-get install python3-pip
 ```
 
-### **5️⃣ Build micro-ROS Tools**
+---
+
+## 🧱 4. Build micro-ROS Tools
 
 ```bash
 colcon build
-```
-
-### **6️⃣ Source the micro-ROS Workspace**
-
-```bash
 source install/local_setup.bash
 ```
 
+---
+
+## 🔧 5. Create Firmware Workspace
+
+```bash
+ros2 run micro_ros_setup create_firmware_ws.sh host
+```
+
+---
+
+## 🏗️ 6. Build Firmware
+
+```bash
+ros2 run micro_ros_setup build_firmware.sh
+source install/local_setup.bash
+```
+
+---
+
+## 📥 7. Download micro-ROS Agent Packages
+
+```bash
+ros2 run micro_ros_setup create_agent_ws.sh
+```
+
+---
+
+## 🏗️ 8. Build micro-ROS Agent
+
+```bash
+ros2 run micro_ros_setup build_agent.sh
+source install/local_setup.bash
+```
+
+---
+
+## 🎉 You're Ready to Use micro-ROS!
 ---
 
 ⚠️ Replace `/dev/ttyUSB0` with your board’s serial port (check with `ls /dev/serial/by-id/*`).
